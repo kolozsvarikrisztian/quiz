@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+
+        form{
+            background-color: #CCCCEE;
+            padding: 30px;
+            border-radius: 20px;
+            width: 70%;
+            margin: auto;
+        }
+
+        p.valaszok
+        {
+             padding-left   : 54px; 
+             padding-bottom : 24px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <form name='teszt'>
+
+      <b>1. Milyen színt jelöl a <i> #000010</i> ? </b>
+
+         <p class='valaszok'>
+            <input type=radio name='k1'> <span>Világoskék</span>     <br>
+            <input type=radio name='k1'> <span>Világoszöld</span>    <br>
+            <input type=radio name='k1'> <span>Majdnem fehér</span>  <br>
+            <input type=radio name='k1'> <span>Majdnem fekete</span> <br>
+         </p>
+
+
+      <b>2. Melyik <i>html-tag</i> képes sorszámozott listát megjeleníteni? </b>
+
+         <p class='valaszok'>
+            <input type=radio name='k2'> <span><font face='courier'>&lt;hl&gt;  </font></span><br>
+            <input type=radio name='k2'> <span><font face='courier'>&lt;il&gt;  </font></span><br>
+            <input type=radio name='k2'> <span><font face='courier'>&lt;ol&gt;  </font></span><br>
+            <input type=radio name='k2'> <span><font face='courier'>&lt;ul&gt;  </font></span><br>
+         </p>
+
+
+      <b>3. Melyik a többsoros szövegbekérő párbeszédelem? </b>
+
+         <p class='valaszok'>
+            <input type=radio name='k3'> <span><font face='courier'>&lt;input type='select'&gt;        </font></span><br>
+            <input type=radio name='k3'> <span><font face='courier'>&lt;input type='textarea'&gt;      </font></span><br>
+            <input type=radio name='k3'> <span><font face='courier'>&lt;textarea&gt;&lt;/textarea&gt;  </font></span><br>
+            <input type=radio name='k3'> <span><font face='courier'>&lt;select&gt;&lt;/select&gt;      </font></span><br>
+         </p>
+
+
+      <b>4. Mi a helyes CSS szintaxis egy elem szélességének megadásához? </b>
+
+         <p class='valaszok'>
+            <input type=radio name='k4'> <span><font face='courier'>width = 250px ;   </font></span><br>
+            <input type=radio name='k4'> <span><font face='courier'>width : 250px ;   </font></span><br>
+            <input type=radio name='k4'> <span><font face='courier'>width = 250 px ;  </font></span><br>
+            <input type=radio name='k4'> <span><font face='courier'>width : 250 px ;  </font></span><br>
+         </p>
+
+
+      <b>5. Melyik az a tulajdonság, aminek átírásával JS-ből frissíthető egy elem tartalma? </b>
+
+         <p class='valaszok'>
+            <input type=radio name='k5'> <span>setInterval</span> <br>
+            <input type=radio name='k5'> <span>setTimeout</span>  <br>
+            <input type=radio name='k5'> <span>innerHTML</span>   <br>
+            <input type=radio name='k5'> <span>src</span>         <br>
+         </p>
+
+
+      <hr align=left>
+
+         <p align='center'>
+            <input type=button name='gomb' value='Értékel' onclick=' ertekel(); '>
+         </p>
+
+</form>
+
+
+
+<script language='javascript'>
+
+
+      function ertekel()
+      {
+         jok = [3, 2, 2, 1, 2]
+         jo = 0
+
+         for (i = 0; i < jok.length; i++){
+            if (document.getElementsByName('k'+ (i + 1))[jok[i]].checked){
+               jo++;
+               document.getElementsByName('k'+ (i + 1))[jok[i]].nextElementSibling.style.color = 'green';
+            }else{
+               for (rB of document.getElementsByName('k'+ (i + 1))){
+                  if (rB.checked) rB.nextElementSibling.style.color = "red";
+               }
+            }
+         }
+
+         // if( document.teszt.k1[3].checked ){
+         //     jo++;
+         //     document.teszt.k1[3].nextElementSibling.style.color = 'green';
+         // }else   
+         // {
+         //     for (rB of document.teszt.k1){
+         //         if (rB.checked) rB.nextElementSibling.style.color = "red";
+         //     }
+         // }
+         // if( document.teszt.k2[2].checked )   jo++
+         // if( document.teszt.k3[2].checked )   jo++
+         // if( document.teszt.k4[1].checked )   jo++
+         // if( document.teszt.k5[2].checked )   jo++
+
+         alert( 'Helyes válaszaid száma: ' + jo )
+      }
+
+
+</script>
+
+</body>
+</html>
